@@ -1,12 +1,16 @@
 package com.chrissetiana.visualizationthings;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.chrissetiana.visualizationthings.AudioVisuals.AudioInputReader;
@@ -35,14 +39,26 @@ public class VisualizerActivity extends AppCompatActivity {
         mVisualizerView.setColor(getString(R.string.pref_color_red_value));
     }
 
-    /**
-     * Below this point is code you do not need to modify; it deals with permissions
-     * and starting/cleaning up the AudioInputReader
-     **/
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.visualizer_menu, menu);
+        return true;
+    }
 
-    /**
-     * onPause Cleanup audio stream
-     **/
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_settings) {
+            Intent startSettingsActivity = new Intent(this, SettingsActivity.class);
+            startActivity(startSettingsActivity);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -78,8 +94,7 @@ public class VisualizerActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           @NonNull String permissions[], @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
         switch (requestCode) {
             case MY_PERMISSION_RECORD_AUDIO_REQUEST_CODE: {
                 // If request is cancelled, the result arrays are empty.
@@ -96,18 +111,6 @@ public class VisualizerActivity extends AppCompatActivity {
                 }
             }
             // Other permissions could go down here
-
         }
     }
 }
-
-// TODO (1) Create a new Empty Activity named SettingsActivity; make sure to generate the
-// activity_settings.xml layout file as well and add the activity to the manifest
-
-// TODO (2) Add a new resource folder called menu and create visualizer_menu.xml
-// TODO (3) In visualizer_menu.xml create a menu item with a single item. The id should be
-// "action_settings", title should be saved in strings.xml, the item should never
-// be shown as an action, and orderInCategory should be 100
-
-// TODO (5) Add the menu to the menu bar
-// TODO (6) When the "Settings" menu item is pressed, open SettingsActivity

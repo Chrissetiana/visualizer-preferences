@@ -1,11 +1,7 @@
 <resources>
     <string name="app_name">Visualize</string>
 
-    <!-- TODO (4) Add string for Settings -->
-
-    <!-- - - - - - - - - - - - - - - -
-          - Used by Preferences  -
-          - - - - - - - - - - - - - - - -->
+    <string name="action_settings">Settings</string>
 
     <!-- Value in SharedPreferences for red color option -->
     <string name="pref_color_red_value" translatable="false">red</string>
