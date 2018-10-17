@@ -1,4 +1,4 @@
-package com.chrissetiana.visualizationthings;
+package com.chrissetiana.visualizerpreferences;
 
 import org.junit.Test;
 

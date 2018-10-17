@@ -1,4 +1,4 @@
-package com.chrissetiana.visualizationthings;
+package com.chrissetiana.visualizerpreferences;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.chrissetiana.visualizationthings", appContext.getPackageName());
+        assertEquals("com.chrissetiana.visualizerpreferences", appContext.getPackageName());
     }
 }

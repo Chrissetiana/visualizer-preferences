@@ -1,4 +1,4 @@
-package com.chrissetiana.visualizationthings.AudioVisuals;
+package com.chrissetiana.visualizerpreferences.AudioVisuals;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;

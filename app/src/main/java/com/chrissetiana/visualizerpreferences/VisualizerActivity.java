@@ -1,4 +1,4 @@
-package com.chrissetiana.visualizationthings;
+package com.chrissetiana.visualizerpreferences;
 
 import android.Manifest;
 import android.content.Intent;
@@ -13,8 +13,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.chrissetiana.visualizationthings.AudioVisuals.AudioInputReader;
-import com.chrissetiana.visualizationthings.AudioVisuals.VisualizerView;
+import com.chrissetiana.visualizerpreferences.AudioVisuals.AudioInputReader;
+import com.chrissetiana.visualizerpreferences.AudioVisuals.VisualizerView;
 
 public class VisualizerActivity extends AppCompatActivity {
 

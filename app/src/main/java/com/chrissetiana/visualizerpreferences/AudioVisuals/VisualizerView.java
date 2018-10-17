@@ -1,4 +1,4 @@
-package com.chrissetiana.visualizationthings.AudioVisuals;
+package com.chrissetiana.visualizerpreferences.AudioVisuals;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -10,7 +10,7 @@ import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.chrissetiana.visualizationthings.R;
+import com.chrissetiana.visualizerpreferences.R;
 
 
 /**

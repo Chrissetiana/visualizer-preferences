@@ -1,4 +1,4 @@
-package com.chrissetiana.visualizationthings;
+package com.chrissetiana.visualizerpreferences;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

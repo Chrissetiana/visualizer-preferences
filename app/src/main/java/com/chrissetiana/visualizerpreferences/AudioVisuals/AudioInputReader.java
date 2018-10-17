@@ -1,11 +1,11 @@
-package com.chrissetiana.visualizationthings.AudioVisuals;
+package com.chrissetiana.visualizerpreferences.AudioVisuals;
 
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.media.audiofx.Visualizer;
 import android.os.Build;
 
-import com.chrissetiana.visualizationthings.R;
+import com.chrissetiana.visualizerpreferences.R;
 
 
 /**
