@@ -7,6 +7,6 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 
     @Override
     public void onCreatePreferences(Bundle bundle, String s) {
-        addPreferencesFromResource(com.chrissetiana.visualizerpreferences.R.xml.pref_visualizer);
+        addPreferencesFromResource(R.xml.pref_visualizer);
     }
 }
