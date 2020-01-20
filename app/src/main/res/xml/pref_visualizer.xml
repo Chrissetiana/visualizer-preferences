@@ -29,4 +29,9 @@
         android:key="@string/pref_color_key"
         android:title="@string/pref_color_label" />
 
+    <EditTextPreference
+        android:defaultValue="@string/pref_size_default"
+        android:key="@string/pref_size_key"
+        android:title="@string/pref_size_label" />
+
 </PreferenceScreen>
