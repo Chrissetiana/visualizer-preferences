@@ -8,8 +8,9 @@ import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceFragmentCompat;
 import android.support.v7.preference.PreferenceScreen;
+import android.widget.Toast;
 
-public class SettingsFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
+public class SettingsFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener, Preference.OnPreferenceChangeListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,9 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
                 setPreferenceSummary(p, value);
             }
         }
+
+        Preference preference = findPreference(getString(R.string.pref_size_key));
+        preference.setOnPreferenceChangeListener(this);
     }
 
     private void setPreferenceSummary(Preference preference, String value) {
@@ -65,5 +69,31 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
     public void onDestroyView() {
         super.onDestroyView();
         getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object o) {
+
+        Toast error = Toast.makeText(getContext(), "Please select a number between 0 and 3", Toast.LENGTH_SHORT);
+
+        String sizeKey = getString(R.string.pref_size_key);
+
+        if (preference.getKey().equals(sizeKey)) {
+            String stringSize = (String) o;
+
+            try {
+                float size = Float.parseFloat(stringSize);
+
+                if (size > 3 || size <= 0) {
+                    error.show();
+                    return false;
+                }
+            } catch (NumberFormatException e) {
+                error.show();
+                return false;
+            }
+        }
+
+        return true;
     }
 }
